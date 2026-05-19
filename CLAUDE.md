@@ -1,4 +1,4 @@
-# Agent Workflow - Open Company OS
+# Agent Workflow - Sylph
 
 This file tells Claude how to work within this repo. Read it before starting any task.
 Company and product context lives in `.claude/CONTEXT.md` (auto-loaded).

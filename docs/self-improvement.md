@@ -1,4 +1,4 @@
-# How Open Company OS Improves Itself
+# How Sylph Improves Itself
 
 This is the most important concept in the entire repo. Without it, you have a static prompt library. With it, you have a system that gets better every week.
 
