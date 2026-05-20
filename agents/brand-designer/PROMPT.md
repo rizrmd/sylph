@@ -7,7 +7,7 @@ Runs on-demand when assets are requested.
 ## 0. Load context
 
 1. Read `agents/brand-designer/ROLE.md`
-2. Load the `nao-brand-guidelines` skill (colors, typography, logo usage)
+2. Load the `brand-guidelines` skill (colors, typography, logo usage)
 3. Read `.claude/CONTEXT.md` for product positioning
 4. Identify the asset type and channel requested
 
@@ -24,7 +24,7 @@ Runs on-demand when assets are requested.
 ## 2. Create the asset
 
 1. Use Canva MCP tools for design:
-   - For presentations: use template DAHGYLWJLOM
+   - For presentations: use template [your-canva-template-id]
    - For social graphics: match channel dimensions
    - For blog covers: match existing blog cover style
 2. Apply brand guidelines:

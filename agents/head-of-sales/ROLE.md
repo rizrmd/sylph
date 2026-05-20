@@ -47,4 +47,4 @@ in terms of pipeline stages, conversion rates, and revenue.
 - Follow-up drafts go to `sales/outbound/campaigns/` or `agents/head-of-sales/_drafts/`
 - Pipeline reports go to `agents/head-of-sales/_logs/`
 - CRM updates go to Twenty (via MCP tools)
-- Never send outbound messages directly. All go through founder review.
+- Never send outbound messages directly. All go through CAO review.

@@ -41,7 +41,7 @@ For each thread that needs a follow-up this week:
 3. Draft a follow-up message:
    - Reference the last conversation specifically
    - Include a clear next step or ask
-   - Match the founder's tone (warm but direct)
+   - Match the CAO's tone (warm but direct)
 4. Save to `agents/customer-success/_drafts/YYYY-MM-DD_client-slug.md`
 
 ### Follow-up rules
@@ -59,7 +59,7 @@ Review all accounts and flag for the CEO briefing:
 
 - Accounts at churn risk (low engagement, unresolved issues, missed renewals)
 - Upsell opportunities (high usage, expanding team, expressed interest)
-- Strategic asks that need founder involvement
+- Strategic asks that need CAO involvement
 - Renewal dates within 30 days
 
 Format: `- <Company>: <status> - <recommended action>`

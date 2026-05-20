@@ -14,7 +14,7 @@ guidelines - colors, typography, logo usage, and art direction.
 - Produce product screenshots and feature illustrations
 
 ### 2. Brand consistency
-- Ensure all assets follow brand guidelines (load nao-brand-guidelines skill)
+- Ensure all assets follow brand guidelines (load brand-guidelines skill)
 - Review existing assets for consistency when requested
 - Maintain a library of reusable templates and components
 
@@ -38,6 +38,6 @@ guidelines - colors, typography, logo usage, and art direction.
 ## Output rules
 
 - Use the Canva MCP tools for design creation
-- Always use the nao presentation template (DAHGYLWJLOM) for slide decks
+- Always use the [your-company] presentation template ([your-canva-template-id]) for slide decks
 - Export assets to the relevant `_drafts/` folder
-- Never publish assets directly. All go through founder review.
+- Never publish assets directly. All go through CAO review.

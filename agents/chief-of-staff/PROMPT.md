@@ -115,11 +115,13 @@ For each external meeting on today's calendar:
 
 1. Search Gmail for recent threads with this person/company (last 30 days)
 2. Search Slack for internal discussions about this person/company
-3. If client or prospect:
+3. Search LinkedIn (TalkToHumans MCP) - `talktohumans_linkedin_search_contacts` with the person's name. Extract: connection status, headline, last DM date. If connected and conversation exists, pull recent messages via `talktohumans_linkedin_search_conversations`.
+4. If client or prospect:
    a. Pull CRM record (Twenty)
    b. Pull last meeting notes (Granola)
    c. Check task board for open items related to them
-4. If investor: check last investor update, any open asks
+   d. Check your product analytics for usage data (deployed yes/no, engagement level, last active date)
+5. If investor: check last investor update, any open asks
 
 ### Output format
 
@@ -162,14 +164,14 @@ Check if today is the 1st of the month. If not, skip entirely.
 
 1. Load the `finance:investor-update` skill
 2. Draft the monthly investor update
-3. Use data from: product metrics (nao MCP), GitHub activity, CRM pipeline, content metrics
+3. Use data from: product metrics ([your-analytics-tool]), GitHub activity, CRM pipeline, content metrics
 4. Leave `[?]` placeholders for any data you cannot auto-fetch
 5. Save draft to `finance/_drafts/YYYY-MM_investor-update.md`
 6. Escalate in briefing: "Investor update draft ready for review - N placeholders to fill"
 
 ### Monthly metrics snapshot
 
-1. Pull key metrics via nao MCP (ask_nao)
+1. Pull key metrics via [your-analytics-tool]
 2. Compare to previous month
 3. Note trends in briefing
 

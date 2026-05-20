@@ -20,7 +20,7 @@ Each employee has a Claude scheduled task that fires on a cron. The task prompt
 tells Claude to load `ROLE.md` + `PROMPT.md` for that employee, then execute.
 
 Outputs always go to `_drafts/` or `_logs/` - never auto-sent, never auto-published.
-The founder reviews and approves.
+The CAO reviews and approves.
 
 ## Creating a new employee
 

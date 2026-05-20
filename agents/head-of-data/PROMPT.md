@@ -15,7 +15,7 @@ Execute in order.
 
 ## 1. Check dashboards
 
-1. Query nao MCP (ask_nao) for key business metrics:
+1. Query [your-analytics-tool] for key business metrics:
    - Active users / usage trends
    - Pipeline metrics (queries run, data processed)
    - Error rates or failure counts

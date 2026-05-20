@@ -1,10 +1,19 @@
 # Agent Workflow - Sylph
 
-This file tells the AI agent (Cursor / Codex / any agent that auto-loads `AGENTS.md`) how to work within this repo. Read it before starting any task.
+This file is the single source of truth for all AI agents working in this repo.
+Read it before starting any task. Company and product context lives in `CONTEXT.md`.
 
-Company and product context lives in `.claude/CONTEXT.md` (the canonical source - shared with Claude Code). Memory and ongoing learnings live in `.claude/MEMORY.md`.
+> **Cross-tool support**: this file is read natively by Codex CLI and Cursor,
+> and imported by Claude Code via `CLAUDE.md`. Skills follow the
+> [Agent Skills](https://agentskills.io) open standard and live in `.claude/skills/`.
 
-> Note: this file is intentionally kept identical in spirit to `CLAUDE.md`. Both point at the same `.claude/` skills, context, and memory so any agent (Claude, Cursor, Codex) operates from the same source of truth.
+---
+
+## 0. Definitions
+
+The **CAO (Chief Agent Officer)** is the human operator who owns this repo. The CAO reviews, approves, and has final say on everything agents produce.
+
+<!-- After running /sylph-setup, replace this with the CAO's name and pronouns -->
 
 ---
 
@@ -13,9 +22,9 @@ Company and product context lives in `.claude/CONTEXT.md` (the canonical source 
 Before doing anything, identify:
 - **What domain** does this task belong to? (content, sales, product, brand, finance, etc.)
 - **Which channel or subfolder** is relevant? (e.g. `content/linkedin/`, `sales/outbound/`)
-- **Is there a skill** for this task? Check `.claude/skills/` - skills are namespaced as `domain:task` (e.g. `content:linkedin`, `sales:outbound`).
+- **Is there a skill** for this task? Check the skill index below.
 
-If a skill exists for the task, load and follow it. Skills encode channel-specific rules, tone, format, and the content flywheel steps.
+If a skill exists, load and follow it. Skills encode channel-specific rules, tone, format, and workflow steps.
 
 ---
 
@@ -52,13 +61,11 @@ create -> _drafts/ -> review/edit -> _published/ -> update _insights.md -> promo
 
 ## 4. File naming
 
-Use this format for all content files:
-
 ```
 YYYY-MM-DD_short-slug.md
 ```
 
-Example: `2025-04-05_linkedin-context-engineering.md`
+Example: `2026-04-05_linkedin-context-engineering.md`
 
 ---
 
@@ -69,12 +76,12 @@ All content files must include frontmatter:
 ```yaml
 ---
 date: YYYY-MM-DD
-channel: linkedin          # the content channel
-topic: context-engineering # main topic
-format: post               # post, thread, article, email, deck, etc.
-status: draft              # draft | published
-performance:               # fill in after publishing (views, clicks, engagement, etc.)
-notes:                     # anything useful for future generation
+channel: linkedin
+topic: context-engineering
+format: post
+status: draft
+performance:
+notes:
 ---
 ```
 
@@ -88,16 +95,24 @@ After completing a task, if you learned something non-obvious:
 
 ---
 
-## 7. Repo map (quick reference)
+## 7. Repo map
 
 ```
+AGENTS.md           - this file (canonical instructions for all agents)
+CONTEXT.md          - stable company/product facts
+CLAUDE.md           - Claude Code loader (imports this file)
+
 .claude/
-  CONTEXT.md        - stable company/product facts (read-only, update only when company changes)
-  MEMORY.md         - living decision + learning log (update often)
-  skills/           - domain-namespaced Claude skills
+  skills/           - skill files (flat: skills/<skill-name>/SKILL.md)
+  MEMORY.md         - living decision + learning log
+
+.agents/
+  skills -> .claude/skills   (symlink - Codex auto-discovery)
+
+agents/             - AI employees (ROLE.md + PROMPT.md, scheduled tasks)
 
 brand/              - brand assets, guidelines, voice
-content/            - all content by channel (blog, linkedin, substack, x, newsletter, etc.)
+content/            - all content by channel
   <channel>/
     _drafts/        - works in progress
     _published/     - archive of published pieces
@@ -111,26 +126,107 @@ product/            - roadmap, issues
 finance/            - investor updates
 partnerships/       - consulting, freelance, influencer
 events/             - hackathons, meetups, remote
-admin/              - internal ops (email, Slack, LinkedIn)
-compliance/         - legal and compliance notes
+admin/              - internal ops
+compliance/         - compliance notes
+legal/              - contracts and legal
+  templates/        - contract templates
+  _drafts/          - contracts in progress
+  _published/       - signed contracts archive
 ```
 
 ---
 
-## 8. Skills reference
+## 8. Skill index
 
-Skills are invoked by their namespace. Always prefer using a skill over ad-hoc generation.
+Skills follow the [Agent Skills](https://agentskills.io) open standard. Each has a `SKILL.md` with `name` and `description` frontmatter.
 
-| Domain | Skills |
-|--------|--------|
-| `content:` | `blog`, `hn`, `launches`, `lead-magnets`, `linkedin`, `newsletter`, `playbooks`, `presentations`, `reddit`, `substack`, `website`, `x`, `youtube` |
-| `sales:` | `outbound`, `proposals` |
-| `customer-success:` | `meeting-followup`, `user-research` |
-| `brand:` | `brand-guidelines` |
-| `finance:` | `investor-update` |
-| `hr:` | `screening` |
-| `events:` | `brief` |
-| `partnerships:` | `brief` |
-| `product:` | `roadmap` |
+**How to invoke:**
+- **Claude Code**: type `/skill-name` (auto-discovered from `.claude/skills/`)
+- **Cursor**: type `/skill-name` (auto-discovered from `SKILL.md` frontmatter)
+- **Codex CLI**: use `$skill-name` or ask by name (auto-discovered from `.agents/skills/`)
 
-**When creating a new skill**, always also create a matching command file in `.claude/commands/<skill-name>.md`. This is what makes it callable as a `/` slash command. The command file should be a short dispatcher that loads and executes the skill file.
+| Skill | Domain | Path |
+|-------|--------|------|
+| chief-of-staff | agents | `.claude/skills/chief-of-staff/SKILL.md` |
+| cmo | agents | `.claude/skills/cmo/SKILL.md` |
+| customer-success | agents | `.claude/skills/customer-success/SKILL.md` |
+| executive-assistant | agents | `.claude/skills/executive-assistant/SKILL.md` |
+| head-of-data | agents | `.claude/skills/head-of-data/SKILL.md` |
+| head-of-sales | agents | `.claude/skills/head-of-sales/SKILL.md` |
+| product-manager | agents | `.claude/skills/product-manager/SKILL.md` |
+| update-docs | agents | `.claude/skills/update-docs/SKILL.md` |
+| brand-designer | brand | `.claude/skills/brand-designer/SKILL.md` |
+| brand-guidelines | brand | `.claude/skills/brand-guidelines/SKILL.md` |
+| blog-writer | content | `.claude/skills/blog-writer/SKILL.md` |
+| linkedin | content | `.claude/skills/linkedin/SKILL.md` |
+| newsletter | content | `.claude/skills/newsletter/SKILL.md` |
+| reddit | content | `.claude/skills/reddit/SKILL.md` |
+| slack-community | content | `.claude/skills/slack-community/SKILL.md` |
+| substack-writer | content | `.claude/skills/substack-writer/SKILL.md` |
+| website | content | `.claude/skills/website/SKILL.md` |
+| x | content | `.claude/skills/x/SKILL.md` |
+| event-manager | events | `.claude/skills/event-manager/SKILL.md` |
+| investor-update | finance | `.claude/skills/investor-update/SKILL.md` |
+| hr-screening | hr | `.claude/skills/hr-screening/SKILL.md` |
+| create-contract | legal | `.claude/skills/create-contract/SKILL.md` |
+| review-contract | legal | `.claude/skills/review-contract/SKILL.md` |
+| zero-inbox | ops | `.claude/skills/zero-inbox/SKILL.md` |
+| create-issue | product | `.claude/skills/create-issue/SKILL.md` |
+| create-campaign | sales | `.claude/skills/create-campaign/SKILL.md` |
+| crm | sales | `.claude/skills/crm/SKILL.md` |
+| customer-report | sales | `.claude/skills/customer-report/SKILL.md` |
+| email-writer | writing | `.claude/skills/email-writer/SKILL.md` |
+| sylph-create-skill | sylph | `.claude/skills/sylph-create-skill/SKILL.md` |
+| sylph-setup | sylph | `.claude/skills/sylph-setup/SKILL.md` |
+| sylph-setup-agent | sylph | `.claude/skills/sylph-setup-agent/SKILL.md` |
+| sylph-setup-skill | sylph | `.claude/skills/sylph-setup-skill/SKILL.md` |
+
+---
+
+## 9. Adding new skills
+
+### How to create a skill
+
+1. Create `.claude/skills/<skill-name>/SKILL.md`
+2. Include `name` and `description` in YAML frontmatter
+3. Add the skill to the index table above
+
+```yaml
+---
+name: my-skill
+description: One line explaining what the skill does and when to use it.
+---
+
+# Skill Title
+
+Instructions here...
+```
+
+### How each tool discovers skills
+
+| Tool | Discovery path | Mechanism |
+|------|---------------|-----------|
+| Claude Code | `.claude/skills/` | Scans this directory at session start |
+| Codex CLI | `.agents/skills/` | Symlink to `.claude/skills/` - Codex auto-discovers from here |
+| Cursor | `.claude/skills/` | Finds `SKILL.md` files with `name`/`description` frontmatter project-wide |
+
+All three tools also read `AGENTS.md` for workflow instructions and the skill index.
+
+### Why this structure - do not change it
+
+Skills must be flat under `.claude/skills/<skill-name>/SKILL.md` (one level).
+Claude Code only discovers skills at this depth - adding domain subdirectories
+(e.g. `.claude/skills/agents/chief-of-staff/`) breaks discovery.
+
+Codex CLI requires `.agents/skills/` for auto-discovery, so we symlink it to
+`.claude/skills/`. This gives both tools the same skills from a single source.
+
+Cursor scans the whole project for `SKILL.md` files. `.cursorignore` excludes
+`.agents/skills/` (symlink duplicate) and `.claude/worktrees/` (Claude Code
+git worktrees that contain full repo copies) to prevent duplicates.
+
+Do not:
+- Add domain subdirectories inside `.claude/skills/` - Claude Code only scans one level deep
+- Move skills to `.agents/skills/` - Claude Code would stop finding them
+- Remove the `.agents/skills` symlink - Codex would lose auto-discovery
+- Remove `.cursorignore` - Cursor would show duplicate slash commands

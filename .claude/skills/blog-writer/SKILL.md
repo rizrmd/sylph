@@ -15,6 +15,13 @@ triggers:
 
 ---
 
+## MCP connectors
+
+| Connector | Purpose |
+|-----------|---------|
+| GitHub | Create PR for blog post, push to repo |
+| Canva | Create cover images and blog graphics |
+
 ## Website Frontmatter Format
 
 Every blog article must include this frontmatter. Adjust field names to match your static site generator.
@@ -224,3 +231,13 @@ Before creating the PR:
 - [ ] Reading time is accurate
 - [ ] Category and tags are set
 - [ ] Article reads well on mobile (short paragraphs, no wide tables)
+
+## Self-improvement
+
+After the CAO reviews and publishes a blog article:
+
+1. Move the final version from `content/blog/_drafts/` to `content/blog/_published/`
+2. Diff what was drafted vs what the CAO kept - identify patterns in her edits to structure, tone, or technical depth
+3. Update `content/blog/_insights.md` with what worked, what she changed, and why (add performance metrics after 7 days)
+4. If her edits reveal a new rule (e.g. "always include a code example in how-to posts", "cut the intro paragraph"), add it to the Writing rules or Article templates sections
+5. If the article performs well (high traffic, shares, or engagement), promote it to `content/blog/_examples/` with annotated performance frontmatter

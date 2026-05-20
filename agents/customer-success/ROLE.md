@@ -45,5 +45,5 @@ through the cracks - every client gets timely follow-up and proactive attention.
 
 - Follow-up drafts go to `agents/customer-success/_drafts/`
 - Logs go to `agents/customer-success/_logs/`
-- Never send messages directly. All drafts go through founder review.
+- Never send messages directly. All drafts go through CAO review.
 - CRM updates go to Twenty (via MCP tools)

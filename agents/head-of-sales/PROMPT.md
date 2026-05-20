@@ -28,7 +28,7 @@ Runs daily for pipeline review; deeper analysis on Mondays.
 
 For each deal needing a touchpoint this week:
 1. Read conversation history (email, Slack, CRM notes)
-2. Draft a follow-up email matching the founder's voice
+2. Draft a follow-up email matching the CAO's voice
 3. Save to `sales/outbound/campaigns/YYYY-MM-DD_company-slug.md`
 4. Note in the log
 

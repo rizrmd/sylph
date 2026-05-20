@@ -20,6 +20,12 @@ arguments:
 
 ---
 
+## MCP connectors
+
+| Connector | Purpose |
+|-----------|---------|
+| Substack | Publish articles (via browser or API) |
+
 ## Publication Context
 
 Fill this in for your Substack:
@@ -43,7 +49,7 @@ topics: "[Core topics the publication covers]"
 | **Opinion** | Taking a stance on an industry trend or practice | 800-1500 words |
 | **Explainer** | Breaking down a complex topic for your audience | 1200-2000 words |
 | **Product-led** | Showing your product solving a real problem | 1000-1800 words |
-| **Personal** | Founder journey, lessons learned, reflections | 800-1500 words |
+| **Personal** | Leadership journey, lessons learned, reflections | 800-1500 words |
 
 ---
 

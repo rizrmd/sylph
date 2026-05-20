@@ -1,0 +1,6 @@
+# Prevent duplicate skill discovery in Cursor.
+# .agents/skills/ is a symlink to .claude/skills/ - exclude to avoid double-counting.
+# .claude/worktrees/ contains full repo copies (Claude Code git worktrees) with
+# their own .claude/skills/, which also causes duplicates.
+.agents/skills/
+.claude/worktrees/

@@ -1,0 +1,5 @@
+# Customer-specific contracts are generated locally and never committed
+*.docx
+*.pdf
+generate-*-docx.js
+!.gitignore

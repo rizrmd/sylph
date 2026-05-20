@@ -15,6 +15,13 @@ triggers:
 
 ---
 
+## MCP connectors
+
+| Connector | Purpose |
+|-----------|---------|
+| Slack | Read DMs and channel mentions, send replies |
+| Gmail | Read unread emails, draft replies |
+
 ## Slack Triage Routine
 
 ### Step 1: Fetch Incoming Messages
@@ -26,7 +33,7 @@ Fetch all DMs and channel mentions from the last 10 days.
 ### Step 2: Fetch Sent Messages
 Fetch the user's own sent messages from the same time period.
 - This is needed to identify which conversations are already handled
-- Also fetch messages sent by designated proxies (e.g., co-founder, EA) who may have replied on the user's behalf
+- Also fetch messages sent by designated proxies (e.g., co-CAO, EA) who may have replied on the user's behalf
 
 ### Step 3: Filter Unanswered
 Compare incoming vs sent. A message is "unanswered" if:
@@ -162,3 +169,12 @@ Present a summary at the end:
 6. **Don't draft for strangers.** If the sender is unknown and the email looks suspicious, flag it rather than drafting a reply.
 7. **Time-sensitive items first.** If something has a deadline within 24 hours, surface it at the top regardless of domain.
 8. **Track patterns.** If the same type of email keeps coming in (e.g., repeated support questions), note it in `_insights.md` as a potential process improvement.
+
+## Self-improvement
+
+After the CAO reviews an inbox triage batch:
+
+1. If the CAO overrides a classification (e.g. moves an email from "archive" to "urgent"), note the pattern in `admin/_insights.md`
+2. If she changes a draft reply before sending, diff what was drafted vs what she sent - update the `email-writer` skill if the pattern is voice-related
+3. If the routing table is wrong (e.g. a domain was assigned to the wrong agent), update the Domain Routing Map section
+4. If new email patterns emerge (e.g. a new type of inbound that needs its own category), add them to the classification guide

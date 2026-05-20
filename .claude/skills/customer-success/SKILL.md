@@ -2,6 +2,15 @@
 
 Weekly follow-up drafting, health monitoring, and churn risk flagging from the CSM backlog.
 
+## MCP connectors
+
+| Connector | Purpose |
+|-----------|---------|
+| CRM | Read customer records, update deal status |
+| Slack | Read customer channels, post follow-ups |
+| Calendar | Check meeting history, schedule follow-ups |
+| Notion | Read customer notes and project boards |
+
 ## Context loading
 
 1. Read `customer-success/ROLE.md` for responsibilities
@@ -27,7 +36,7 @@ Weekly follow-up drafting, health monitoring, and churn risk flagging from the C
 
 ## Follow-up rules
 
-- Use Claire's voice and tone - load `email-writer` skill for drafts
+- Use the CAO's voice and tone - load `email-writer` skill for drafts
 - Open with "Hope you're doing well!" always
 - Reference specific recent activity, not generic check-ins
 - Keep it short - 3-5 sentences max
@@ -35,6 +44,16 @@ Weekly follow-up drafting, health monitoring, and churn risk flagging from the C
 ## Guardrails
 
 - **Drafts only** - never send messages directly
-- **No discount or pricing commitments** - escalate to Claire
-- **Flag churn risk** immediately to Claire via Slack DM
+- **No discount or pricing commitments** - escalate to the CAO
+- **Flag churn risk** immediately to the CAO via Slack DM
 - **No PII in logs** - use company names only, not individual names
+
+## Self-improvement
+
+After the CAO reviews and approves follow-up drafts:
+
+1. Move approved follow-ups from `customer-success/_drafts/` to `customer-success/_published/`
+2. Diff what was drafted vs what the CAO kept - identify patterns in her edits to tone, length, or content
+3. Update `customer-success/_insights.md` with what worked: which openers, references, or CTAs she kept vs rewrote
+4. If her edits reveal a new rule (e.g. "always reference their last support ticket", "shorter is better for check-ins"), add it to the Follow-up rules section above
+5. If a follow-up gets a strong response, save it to `customer-success/_examples/` with context annotations

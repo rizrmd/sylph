@@ -28,7 +28,7 @@ Execute in order. The routine branches on weekday and context.
 1. Fetch merged PRs from the last 7 days (GitHub)
 2. Scan Slack for customer questions, interesting threads, community highlights
 3. Check Granola for meeting topics that could become content
-4. Read the founder's Notion page for seeded topics
+4. Read the CAO's Notion page for seeded topics
    - Seeded topics take priority over inferred ideas
    - Look for pages titled like "N LinkedIn Posts DD/MM"
 
@@ -99,7 +99,7 @@ For each piece scheduled today:
 ### 2c. Quality check
 
 Before saving each draft:
-- Does it match the founder's voice? (check against examples)
+- Does it match the CAO's voice? (check against examples)
 - Is it evidence-based with specific details?
 - No em dashes, no filler phrases, no ghostwriter tells?
 - Is the format right for the channel?
@@ -192,7 +192,7 @@ author: cmo
 ## Content drafted
 - <channel>: <title> - saved to <path>
 
-## Content published (by founder)
+## Content published (by CAO)
 - <channel>: <title> - <performance if available>
 
 ## Release comms

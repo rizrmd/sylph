@@ -1,0 +1,4 @@
+# Generated artifacts
+*.docx
+*.pdf
+!.gitignore

@@ -2,6 +2,15 @@
 
 Creates issues from customer feedback, monitors issues and PRs, and produces the daily product recap.
 
+## MCP connectors
+
+| Connector | Purpose |
+|-----------|---------|
+| GitHub | Create issues, read PRs, monitor repos |
+| Granola | Search call transcripts for user feedback, feature requests, bug reports |
+| Notion | Read roadmap, update project boards |
+| Slack | Read feedback channels, post updates |
+
 ## Context loading
 
 1. Read `product/ROLE.md` for responsibilities
@@ -34,7 +43,16 @@ Creates issues from customer feedback, monitors issues and PRs, and produces the
 
 ## Guardrails
 
-- **Never close issues** without explicit confirmation from Claire or the assignee
+- **Never close issues** without explicit confirmation from the CAO or the assignee
 - **No PII** in any GitHub content - scrub names, emails, company names from feedback
 - **Never merge PRs** - flag ready PRs for review only
 - **Escalate** architecture decisions and breaking changes
+
+## Self-improvement
+
+After the CAO reviews a product manager output (issue batch, PR recap, daily summary):
+
+1. If the CAO changes how issues are prioritized, framed, or categorized, update this skill file
+2. If she flags feedback sources that were missed (e.g. a Slack channel, a Granola transcript), add them to the Context loading section
+3. Update `product/_insights.md` with patterns: which feedback signals matter most, how she triages
+4. If a daily summary format or issue batch structure works well, save it to `product/_examples/`

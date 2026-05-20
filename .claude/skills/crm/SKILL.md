@@ -2,6 +2,12 @@
 
 Reference skill for working with the Twenty CRM. Detailed setup and schema docs live in `admin/crm/README.md`.
 
+## MCP connectors
+
+| Connector | Purpose |
+|-----------|---------|
+| CRM | Read and update contacts, deals, activities |
+
 ## Quick reference
 
 - **CRM**: Twenty (self-hosted)
@@ -31,3 +37,12 @@ Reference skill for working with the Twenty CRM. Detailed setup and schema docs 
 - **Never bulk-update** without confirmation - show the change list first
 - **Always verify ambiguous matches** - if a search returns multiple results, ask
 - **Log significant changes** - note CRM updates in the relevant agent's log
+
+## Self-improvement
+
+After the CAO corrects a CRM operation or query:
+
+1. If the correction reveals a CRM schema quirk (e.g. "use display name not slug for deal stages"), add it to the Key patterns section above
+2. If a common operation is missing from the Quick reference table, add it
+3. Update `admin/crm/_insights.md` with the correction and the right approach
+4. If a new tool or query pattern proves reliable, add it to the Common operations table
