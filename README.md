@@ -2,7 +2,7 @@
   <img src="brand/logo/sylph-icon.png" width="120" alt="sylph" />
 </p>
 
-<h1 align="center">sylph</h1>
+<h1 align="center">Sylph</h1>
 
 <p align="center">
   The open-source company brain.<br/>
