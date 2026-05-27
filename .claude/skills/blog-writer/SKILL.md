@@ -60,23 +60,35 @@ Use one of these categories (or define your own):
 
 ## Voice and Style Rules
 
-### Core Rules
-- No em dashes (--) or en dashes. Use hyphens (-) or colons (:).
-- Direct openings. Never start with "In today's world..." or "As we all know..."
-- Evidence over assertion. Don't say "powerful" - show what it does.
-- First person for personal experience, second person for instructions.
-- Short paragraphs. 3-4 sentences max per paragraph.
+### pnv Voice Rules
+- **Always lowercase**: pnv (even at the start of a sentence)
+- **Origin**: "ponovo" = Croatian for "replay/again" — use as brand origin story
+- **Humble tool positioning**: We are a browser as a service. Nothing more, nothing less. Reliable. Trustworthy.
+- **Founder-led tone**: First person (I/we), direct, technical audience. You're talking to builders.
+- **No superlatives**: Never "revolutionary," "game-changing," "disruptive."
+- **Short paragraphs**: 3-4 sentences max. Fragments OK.
+- **No em dashes** (--) or en dashes. Use hyphens (-) or colons (:).
+- **Active voice always**: "Spin up a cloud browser" not "A cloud browser can be spun up."
 
 ### Opening Patterns
 Strong blog openings:
-- **Problem statement**: "Most data teams waste 3 hours a day on tasks that should take 10 minutes."
-- **Specific finding**: "We tested 5 approaches to [X]. Only one consistently worked."
-- **Story**: "Last Tuesday, a customer asked us something we couldn't answer. So we built it."
+- **Problem statement**: "Browser automation today falls into two camps."
+- **Comparison**: "Most cloud browser platforms use AI. We don't."
+- **Specific observation**: "Every browser automation tool makes you choose between seeing and scaling."
 
 Weak openings (never use):
 - "We're excited to share..."
 - "In the ever-evolving landscape of..."
 - "Today we're announcing..."
+- "We're thrilled to introduce..."
+
+### Keywords (use naturally)
+- cloud browser, browser as a service, replayable tasks, deterministic, transparent, mark and replay
+
+### Words to avoid
+- "leverage," "empower," "seamless," "robust," "best-in-class," "cutting-edge"
+- "AI-powered," "intelligent," "smart" (we don't use AI)
+- "revolutionary," "game-changing," "disruptive"
 
 ### Readability
 - Use H2 for main sections, H3 for subsections

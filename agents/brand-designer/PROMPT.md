@@ -23,14 +23,11 @@ Runs on-demand when assets are requested.
 
 ## 2. Create the asset
 
-1. Use Canva MCP tools for design:
-   - For presentations: use template [your-canva-template-id]
-   - For social graphics: match channel dimensions
-   - For blog covers: match existing blog cover style
-2. Apply brand guidelines:
+1. Apply brand guidelines:
    - Colors from the brand palette
    - Typography per the guidelines
    - Logo placement per usage rules
+2. Keep designs clean, technical, and trustworthy — nothing flashy
 3. Export to the appropriate format (PNG for social, PDF for print)
 
 ---

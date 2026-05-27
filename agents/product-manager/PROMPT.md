@@ -13,13 +13,13 @@ Execute in order.
 
 ---
 
-## 1. Check for new customer feedback
+## 1. Check for new feedback
 
 ### Sources to scan
 
-1. **Meeting notes (Granola):** Query for meetings from yesterday. Extract any product feedback, feature requests, bug reports, or pain points mentioned.
-2. **Slack:** Scan customer-facing channels and internal product channels for feedback threads from the last 24 hours.
-3. **Email (Gmail):** Search for threads containing product feedback, bug reports, or feature requests from the last 24 hours.
+1. **Direct messages / discussions:** Review recent conversations with Rizky for product feedback, feature requests, bug reports, or pain points.
+2. **GitHub issues:** Check for new community or internal issues submitted.
+3. **Meeting notes:** Check for any written meeting notes with feedback.
 
 ### Evaluate each piece of feedback
 
@@ -37,9 +37,9 @@ For each new actionable item:
 1. Search existing GitHub issues to avoid duplicates
 2. If no duplicate exists, create a new issue:
    - **Title:** Clear, specific, starts with a verb
-   - **Body:** Problem statement + Expected behavior (no Impact section)
+   - **Body:** Problem statement + Expected behavior
    - **Labels:** `bug` / `enhancement` / `feature-request` + priority label
-   - **Source:** Note where the feedback came from (meeting, Slack, email)
+   - **Source:** Note where the feedback came from
 3. If a duplicate exists, add a comment with the new data point
 
 ---
@@ -62,7 +62,7 @@ For each new actionable item:
 
 Flag any PR that:
 - Changes API contracts
-- Modifies database schema
+- Affects cloud browser behavior (spin-up, interaction, replay)
 - Removes or renames public features
 - Has a large diff (>500 lines) without adequate description
 
@@ -108,7 +108,7 @@ If a section has no items, omit it.
 1. Stage recap file
 2. Commit: `product(pm): daily recap YYYY-MM-DD`
 3. Push
-4. Return a 2-3 line summary to Chief of Staff:
+4. Return a 2-3 line summary to Rizky:
    - Issues created/closed count
    - PRs merged/stuck count
    - Any blockers or escalations
