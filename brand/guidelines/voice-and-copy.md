@@ -10,6 +10,20 @@ pnv is a browser as a service — a humble tool that just works, is always relia
 2. **What it does:** Spin up cloud-hosted browser instances from your browser. Interact transparently. Mark any past interaction and replay it as an automated task.
 3. **The problem:** Existing browser automation is either local-only or API-only. pnv gives you a full, visible cloud browser you can control remotely.
 
+### Logo Taglines
+
+Short taglines for use with the pnv logo/wordmark (2–5 words ideal, fragments OK). All follow brand voice: direct, technical, humble, no hype.
+
+**Primary recommendations:**
+- **"Replay exactly."** — strongest, owns the core differentiator
+- **"A browser as a service."** — official one-liner, clean for lockups
+- **"No code. No AI. Exact."** — clear contrast vs competitors
+
+**Strong alternatives:**
+- "Interact. Replay. Repeat."
+- "Record once. Replay forever."
+- "Your browser, replayed."
+
 ### Brand Beliefs
 
 - Be the tool that quietly works — no hype, no drama
